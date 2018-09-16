@@ -1,29 +1,7 @@
-var Word = require("./word.js");
-var inquirer = require("inquirer");
+var Game = require("./lib/game");
 
-var words = ["Mustang", "Camero", "Charger", "Chevelle", "Porsche", "Ferrari"];
-randomWord = words[Math.floor(Math.random() * words.length)];
+// Initialize a new Game object
+var game = new Game();
 
-var word = new Word(randomWord);
-word.separateWord();
-console.log(word);
-// inquirer
-//   .prompt([
-//     (question = {
-//       type: "input",
-//       name: "guessedLetter",
-//       message: "Please guess a letter...",
-//       validate: function(value) {
-//         var letters = /^[a-zA-Z]+$/;
-//         var pass = value.match(letters);
-//         if (pass) {
-//           return true;
-//         }
-
-//         return "Please enter an alphabetic character";
-//       }
-//     })
-//   ])
-//   .then(answers => {
-//     console.log(JSON.stringify(answers, null, "  "));
-//   });
+// Start playing
+game.play();
